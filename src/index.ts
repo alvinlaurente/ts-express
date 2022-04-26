@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -34,6 +34,7 @@ app.use(routes);
 // Initialize App
 const appName = process.env.APP_NAME;
 const port = process.env.APP_PORT;
+app.set('port', port);
 app.listen(port, () => {
-  console.log(`${appName} listening on port ${port}`);
+  console.log(`${appName?.toUpperCase()} listening on port ${port}`);
 });

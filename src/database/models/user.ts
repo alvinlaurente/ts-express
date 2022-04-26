@@ -19,12 +19,6 @@ module.exports = (sequelize: any, DataTypes: any) => {
     name!: string;
     email!: string;
     password!: string;
-    static associate(models: any) {
-      // define association here
-      User.belongsToMany(models.Task, {
-        through: 'Projects',
-      });
-    }
   }
   User.init(
     {
